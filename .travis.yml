@@ -34,7 +34,7 @@ before_script:
 script: 
   - brew doctor
   - php mageekguy.atoum.phar --test-it
-  - brew install homebrew/php/phplint
+  - brew install homebrew/php/phplint || true
   - rm  /home/travis/build/muntrip/mun/mageekguy.atoum.phar
   - phpcs --config-set show_progress 1
   - phpcs * --report-file=report.txt || true
