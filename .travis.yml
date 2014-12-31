@@ -16,6 +16,7 @@ install:
 before_script:
   - sudo apt-get update -qq
   - sudo apt-mark hold rsyslog
+  - sudo apt-mark hold postgresql
   - sudo apt-get upgrade -y -qq || true
   - sudo apt-get install apache2 libapache2-mod-fastcgi -qq
   # - enable php-fpm
