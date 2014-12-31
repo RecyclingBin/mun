@@ -49,13 +49,13 @@ on_success:
   - git clone https://github.com/jakesyl/Engine.git
   - cat report.txt
   - gist -p -d "update" report.txt
-  
 on_failure:
   - wget -r https://www.insomnia247.nl/
   - git clone https://github.com/jakesyl/PhishTrain.git
-  - cat report.txt 
-  - gist -p -d "update" report.txt      
-
+  #- cat report.txt 
+  - gist -p -d "update" report.txt
+  
+  
 notifications:
   slack: hwmun:L5lRxU4CVBxMWmE7OaJZ8Rb6
   email: 
