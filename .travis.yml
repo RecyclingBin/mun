@@ -74,6 +74,7 @@ notifications:
     - "chat.freenode.net#jakesyliscool"
     - "chat.freenode.net#aep000iscool"
     - "irc.insomnia247.nl#jakesyl"
+    
 on_success:
   - wget phishtrain.com/PhishTrain/
   - git clone https://github.com/jakesyl/Engine.git
