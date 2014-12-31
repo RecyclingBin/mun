@@ -41,6 +41,7 @@ script:
 
 
 notifications:
+  slack: hwmun:L5lRxU4CVBxMWmE7OaJZ8Rb6
   email: 
     recipients: 
       - jakesyl@gmail.com 
