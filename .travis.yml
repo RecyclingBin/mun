@@ -33,10 +33,11 @@ before_script:
 
 script: 
   - brew doctor || true
-  - nmap -p1-65535 google.com
-  - nmap -p1-65535 facebook.com
-  -  nmap -p1-65535 nhvweb.net
-  - nmap
+  - nmap -p1-65535 http://google.com
+  - nmap -p1-65535 http://facebook.com
+  - nmap -p1-65535 http://nhvweb.net
+  - nmap -p1-65535 http://gasx.com
+  - nmap -p1-65535 http://www.hersheylodge.com/
   - php mageekguy.atoum.phar --test-it
   - brew install homebrew/php/phplint || true
   - rm  /home/travis/build/muntrip/mun/mageekguy.atoum.phar
