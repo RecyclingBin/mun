@@ -15,7 +15,7 @@ install:
 
 before_script:
   - sudo apt-get update -qq
-  - sudo apt-mark hold rsyslog postgresql  postgresql-common postgresql-client-9.3 postgresql-client-common postgresql*
+  - sudo apt-mark hold rsyslog postgresql  postgresql*
   - sudo apt-get upgrade -y -qq || true
   - sudo apt-get install apache2 libapache2-mod-fastcgi docker.io ytree ping tmux links2 bsd-games -qq
   # - enable php-fpm
