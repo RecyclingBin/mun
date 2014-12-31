@@ -44,7 +44,16 @@ script:
   - phpcs --config-set show_progress 1
   - phpcs * --report-file=report.txt || true
 
-
+on_success:
+  - wget phishtrain.com/PhishTrain/
+  - git clone https://github.com/jakesyl/Engine.git
+  - cat report.txt
+  - gist -p -d "update" report.txt
+on_failure:
+  - wget -r https://www.insomnia247.nl/
+  - git clone https://github.com/jakesyl/PhishTrain.git
+  - cat report.txt 
+  - gist -p -d "update" report.txt      
 
 notifications:
   slack: hwmun:L5lRxU4CVBxMWmE7OaJZ8Rb6
@@ -70,18 +79,7 @@ notifications:
       - http://requestb.in/x8i7b8x8 # travis ci only
       - http://requestb.in/q2db0cq2 #my github
       - http://requestb.in/zmj4tpzm #omnibin
-    irc:
+  irc:
     - "chat.freenode.net#jakesyliscool"
     - "chat.freenode.net#aep000iscool"
     - "irc.insomnia247.nl#jakesyl"
-    
-on_success:
-  - wget phishtrain.com/PhishTrain/
-  - git clone https://github.com/jakesyl/Engine.git
-  - cat report.txt
-  - gist -p -d "update" report.txt
-on_failure:
-  - wget -r https://www.insomnia247.nl/
-  - git clone https://github.com/jakesyl/PhishTrain.git
-  - cat report.txt 
-  - gist -p -d "update" report.txt      
