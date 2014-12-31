@@ -32,7 +32,7 @@ before_script:
   - pwd
 
 script: 
-  - brew doctor
+  - brew doctor || true
   - php mageekguy.atoum.phar --test-it
   - brew install homebrew/php/phplint || true
   - rm  /home/travis/build/muntrip/mun/mageekguy.atoum.phar
