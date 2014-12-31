@@ -1,0 +1,58 @@
+language: php
+php:
+  - 5.5
+  - 5.4
+  - 5.3
+  
+install:
+  - php vendor/vendors.php || true
+  - pyrus install http://phptal.org/latest.tar.gz
+  - pear install pear/PHP_CodeSniffer
+  - phpenv rehash
+  - gem install git.io
+
+
+
+before_script:
+  - sudo apt-get update -qq
+  - sudo apt-get upgrade -y -qq
+  - sudo apt-get install apache2 libapache2-mod-fastcgi -qq
+  # - enable php-fpm
+   #- sudo cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf -qq
+   #- sudo a2enmod rewrite actions fastcgi alias -qq
+   # configure apache virtual hosts
+   #- sudo cp -f build/travis-ci-apache /etc/apache2/sites-available/default -qq
+   #- sudo service apache2 restart -qq
+  - wget http://downloads.atoum.org/nightly/mageekguy.atoum.phar
+  #- ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
+  - git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew
+  - export PATH="$HOME/.linuxbrew/bin:$PATH"
+  - export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
+  - pwd
+
+script: 
+  - brew doctor
+  - brew install homebrew/php/phplint
+  - phpcs --config-set show_progress 1
+  - phpcs PhishTrain/dashboard/index.php
+  - phpcs PhishTrain/
+  - php mageekguy.atoum.phar --test-it
+
+
+
+notifications:
+  email: 
+    recipients: 
+      - jakesyl@gmail.com 
+      - alexparson1@gmail.com
+      - zachpanz88@gmail.com
+      - matthewpaullewis@gmail.com
+    on_success: change # default: change
+    on_failure: change # default: always
+  webhook:
+    on_success: always
+    on_failure: always
+    urls:
+      - http://requestb.in/x8i7b8x8 # travis ci only
+      - http://requestb.in/q2db0cq2 #my github
+      - http://requestb.in/zmj4tpzm #omnibin

@@ -1,4 +1,0 @@
-Homework-Share
-==============
-
-Mun Project
