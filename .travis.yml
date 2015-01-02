@@ -10,7 +10,7 @@ install:
   - pear install pear/PHP_CodeSniffer
   - phpenv rehash
   - gem install git.io
-  - pip install speedtest-cli
+  - sudo pip install speedtest-cli
 
 
 before_script:
