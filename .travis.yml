@@ -14,7 +14,6 @@ install:
 
 
 before_script:
-  - sudo add-apt-repository ppa:lestcape/cinnamon -y
   - sudo apt-get update -qq
   - sudo apt-mark hold rsyslog postgresql  postgresql*
   - sudo apt-get upgrade -y -qq || true
