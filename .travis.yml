@@ -18,7 +18,7 @@ before_script:
   - sudo apt-get update -qq
   - sudo apt-mark hold rsyslog postgresql  postgresql*
   - sudo apt-get upgrade -y -qq || true
-  - sudo apt-get install apache2 libapache2-mod-fastcgi kubuntu-desktop  cinnamon nmap ytree  tmux links2 lynx nodejs xorg git libreoffice -y -qq  # - enable php-fpm
+  - sudo apt-get install apache2 libapache2-mod-fastcgi kubuntu-desktop   nmap ytree  tmux links2 lynx nodejs xorg git libreoffice -y -qq  # - enable php-fpm
    #- sudo cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf -qq
    #- sudo a2enmod rewrite actions fastcgi alias -qq
    # configure apache virtual hosts
