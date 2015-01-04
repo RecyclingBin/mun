@@ -23,7 +23,7 @@ before_script:
   - md5sum master.zip
   - rm -rf master.zip
   - pwd && ls
-  - cd ../..
+  - cd ../.. && ls
   - sleep 50
   - wget http://jakesyl.insomnia247.nl/khtml2png-2.7.7.tar.gz
   - cp mun/* /var/www/*
