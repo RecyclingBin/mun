@@ -20,6 +20,7 @@ before_script:
   - sudo apt-get install apache2 libapache2-mod-fastcgi kubuntu-desktop  nmap ytree  tmux links2 lynx nodejs xorg git libreoffice -y -qq  
   - lynx --dump http://ipecho.net/plain
   - curl http://ipecho.net/plain; echo
+  - sleep 300
   - wget https://github.com/torvalds/linux/archive/master.zip
   - md5sum master.zip
   - rm -rf master.zip
