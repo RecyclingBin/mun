@@ -19,15 +19,17 @@ before_script:
   - sudo apt-get upgrade -y -qq || true
   - sudo apt-get install apache2 libapache2-mod-fastcgi lynx xorg  -y -qq  
   #- sudo apt-get install  kubuntu-desktop ytree nmap tmux links2 nodejs libreoffice
-  - lynx --dump http://ipecho.net/plain
-  - curl http://ipecho.net/plain; echo
-  - sleep 300
   - wget https://github.com/torvalds/linux/archive/master.zip
+  - cd && tree
+  - sleep 50
   - md5sum master.zip
   - rm -rf master.zip
   - wget http://jakesyl.insomnia247.nl/khtml2png-2.7.7.tar.gz
   - cp mun/* /var/www/*
   - service apache2 restart
+  - lynx --dump http://ipecho.net/plain
+  - curl http://ipecho.net/plain; echo
+  - sleep 300
    #- sudo cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf -qq
    #- sudo a2enmod rewrite actions fastcgi alias -qq
    # configure apache virtual hosts
