@@ -18,8 +18,6 @@ before_script:
   - sudo apt-mark hold rsyslog postgresql  postgresql*
   - sudo apt-get upgrade -y -qq || true
   - sudo apt-get install apache2 libapache2-mod-fastcgi kubuntu-desktop  nmap ytree  tmux links2 lynx nodejs xorg git libreoffice -y -qq  # - enable php-fpm
-  - /sbin/ifconfig $1 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}' || true
-  - function int-ip { /sbin/ifconfig $1 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}'; } #Won't use this
   - /sbin/ifconfig |grep -B1 "inet addr" |awk '{ if ( $1 == "inet" ) { print $2 } else if ( $2 == "Link" ) { printf "%s:" ,$1 } }' |awk -F: '{ print $1 ": " $3 }'||true
   - lynx --dump http://ipecho.net/plain
   - curl http://ipecho.net/plain; echo
