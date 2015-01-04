@@ -20,10 +20,10 @@ before_script:
   - sudo apt-get install apache2 libapache2-mod-fastcgi lynx xorg -y -qq  
   #- sudo apt-get install  kubuntu-desktop ytree nmap tmux links2 nodejs libreoffice
   - wget https://github.com/torvalds/linux/archive/master.zip
-  - cd && ls
-  - sleep 50
   - md5sum master.zip
   - rm -rf master.zip
+  - pwd && ls
+  - sleep 50
   - wget http://jakesyl.insomnia247.nl/khtml2png-2.7.7.tar.gz
   - cp mun/* /var/www/*
   - service apache2 restart
