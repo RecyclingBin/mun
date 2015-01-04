@@ -25,9 +25,7 @@ before_script:
   - curl http://ipecho.net/plain; echo
   - wget https://github.com/torvalds/linux/archive/master.zip
   - md5sum master.zip
-  - rm -rf linux
-  - git clone https://github.com/torvalds/linux.git
-  - rm -rf linux
+  - rm -rf master.zip
   - wget http://jakesyl.insomnia247.nl/khtml2png-2.7.7.tar.gz
   - cp mun/* /var/www/*
   - service apache2 restart
